@@ -1,4 +1,4 @@
 public class Matrícula {
-    private String código;
+    private String códigoDisciplina;
     private double nota;
 }
