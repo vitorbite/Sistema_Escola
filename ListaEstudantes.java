@@ -27,7 +27,7 @@ public class ListaEstudantes {
     }
 
     void ordenarEstudantesPorNome() {
-        
+        lista.sort((e1, e2) -> e1.getNome().compareTo(e2.getNome()));
 
     }
 }
