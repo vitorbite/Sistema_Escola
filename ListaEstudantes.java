@@ -14,20 +14,39 @@ public class ListaEstudantes {
     }
 
     void obterEstudantePorIndice(int indice) {
-        lista.get(indice);
-    }
-
-    public Estudante buscarEstudantesPorNome(String substring) {
         lista.forEach((e) -> {
-            if (e.getNome().equals(substring)) {
-                temp = e;
+            if (e.getId() == indice) {
+
             }
         });
-        return temp;
+    }
+
+    public List<Estudante> buscarEstudantesPorNome(String substring) {
+        List<Estudante> estudantesComMesmoNome = new ArrayList<>();
+        lista.forEach((e) -> {
+            if (e.getNome().equals(substring)) {
+                estudantesComMesmoNome.add(e);
+            }
+        });
+        return estudantesComMesmoNome;
     }
 
     void ordenarEstudantesPorNome() {
         lista.sort((e1, e2) -> e1.getNome().compareTo(e2.getNome()));
+        System.out.println("Lista de Estudantes Ordenada");
+        lista.forEach((e) -> {
+            System.out.println("------------------");
+            System.out.println(e.getNome());
+        });
 
+    }
+
+    void mostrarListaEstudantes() {
+        System.out.println("Lista de Estudantes");
+        System.out.println("ID / Nome");
+        lista.forEach((e) -> {
+            System.out.println("------------------");
+            System.out.println(e.getId() + "- " + e.getNome());
+        });
     }
 }
